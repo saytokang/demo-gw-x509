@@ -1,0 +1,12 @@
+GET https://localhost:8443/users/1
+###
+
+GET https://localhost:8443/me
+###
+
+
+curl -k https://localhost:8443/users/1 \
+ --cert /Users/donheekang/workspace/tmp/1103/demo-gw-x509/client.pem \
+ --key /Users/donheekang/workspace/tmp/1103/demo-gw-x509/client.key \
+ --verbose
+###

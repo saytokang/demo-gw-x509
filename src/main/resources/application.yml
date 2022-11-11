@@ -1,0 +1,21 @@
+
+server:
+    port: 8443
+    ssl:
+        key-store: 'classpath:ssl/server.p12'
+        key-store-password: 123456
+        
+        client-auth: need
+        trust-store: 'classpath:ssl/truststore.jks'
+        trust-store-password: 123456
+
+spring:
+    cloud:
+        gateway:
+            routes:
+            - id: r1
+              uri: https://reqres.in
+              predicates:
+                - Path=/users/{id}
+              filters:
+                - SetPath=/api/users/{id}
