@@ -36,3 +36,12 @@ http.x509(x509 -> {})
 
 ReactiveSecurityContextHolder.getContext() 함수를 사용하면 된다. 
 
+## test 방법
+
+요청하는 client 측에서 인증서를 제공해야 한다.  
+```
+curl -k https://localhost:8443/users/1 \
+ --cert /Users/donheekang/workspace/tmp/1103/demo-gw-x509/client.pem \
+ --key /Users/donheekang/workspace/tmp/1103/demo-gw-x509/client.key \
+ --verbose
+ ```
